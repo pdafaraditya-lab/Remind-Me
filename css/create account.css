@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css?family=Krona+One&display=swap');
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: "Krona One", Helvetica, Arial, sans-serif;
+  background: var(--main-blue, #2b3c57);
+  overflow-x: hidden; 
+}
+
+.create-new-account {
+  width: 100%;
+  min-height: 100vh;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--main-blue, #2b3c57);
+}
+
+.header {
+  width: 100%;
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logo-remind-me {
+  width: 220px;
+  max-width: 90vw;
+  height: auto;
+  margin-bottom: 24px;
+}
+
+.form-title {
+  font-size: 24px;
+  color: #fff;
+  font-weight: 400;
+  margin-bottom: 32px;
+  text-align: center;
+  letter-spacing: 0.5px;
+}
+
+.signup-form {
+  width: 90%;
+  max-width: 330px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  box-sizing: border-box;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group label {
+  font-size: 13px;
+  color: #fff;
+  font-weight: 400;
+  margin-bottom: 1px;
+  letter-spacing: 0.3px;
+}
+
+.form-group input {
+  padding: 10px 12px;
+  font-size: 14px;
+  border: none;
+  border-radius: 5px;
+  background: #fff;
+  color: #000;
+  font-family: inherit;
+  outline: none;
+  box-sizing: border-box;
+  font-weight: 400;
+}
+
+.form-group input::placeholder {
+  color: #b0b0b0;
+  opacity: 1;
+}
+
+.btn-signin {
+  margin-top: 10px;
+  width: 100%;
+  display: inline-block;
+  text-align: center;
+  padding: 10px 0;
+  background: #f7c95f;
+  border-radius: 5px;
+  font-size: 16px;
+  font-family: inherit;
+  font-weight: 500;
+  color: #181818;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.2s;
+  border: none;
+  box-sizing: border-box;
+}
+
+.btn-signin:hover {
+  background: #f5be3f;
+}
+
+.forgot-password {
+  margin-top: 18px;
+  display: block;
+  text-align: center;
+  font-size: 13px;
+  color: #fff;
+  text-decoration: underline;
+  cursor: pointer;
+  font-weight: 400;
+  letter-spacing: 0.2px;
+}
+
+.forgot-password:hover {
+  color: #f7c95f;
+}
+
+@media (max-width: 420px) {
+  .form-title {
+    font-size: 20px;
+  }
+  .create-new-account {
+    min-width: unset;
+    min-height: 100vh;
+  }
+}

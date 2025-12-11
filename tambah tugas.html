@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RemindMe - Tugas Baru</title>
+<link rel="stylesheet" href="css/tambah tugas.css">
+</head>
+<body>
+
+<div class="container">
+    <img src="gambar/logo.png" alt="RemindMe" style="width: 200px; margin-bottom: 40px;">
+
+    <div class="title">Tugas Baru</div>
+
+    <input type="text" placeholder="mata pelajaran" id="mapel">
+    <textarea placeholder="isi tugas" id="isi"></textarea>
+
+    <!-- WAKTU DEADLINE -->
+    <label style="color:white; font-size:14px; margin-top:15px; display:block; text-align:left;">
+        Waktu tenggat:
+    </label>
+    <input type="datetime-local" id="deadline">
+
+    <!-- NOTIFIKASI -->
+    <label style="color:white; font-size:14px; margin-top:15px; display:block; text-align:left;">
+        Pengingat:
+    </label>
+    <select id="notif">
+        <option value="none">Tidak ada</option>
+        <option value="10">10 menit sebelum</option>
+        <option value="60">1 jam sebelum</option>
+        <option value="1440">1 hari sebelum</option>
+        <option value="custom">Custom…</option>
+    </select>
+
+    <!-- INPUT CUSTOM -->
+    <input type="number" id="customNotif" placeholder="Masukkan menit sebelum" style="display:none; margin-top:10px;">
+
+    <button class="btn" onclick="saveTask()">TAMBAHKAN TUGAS</button>
+</div>
+
+
+<!-- ========================
+        JAVASCRIPT
+============================ -->
+<script>
+// Munculkan input custom jika dipilih
+document.getElementById("notif").addEventListener("change", function() {
+    if (this.value === "custom") {
+        document.getElementById("customNotif").style.display = "block";
+    } else {
+        document.getElementById("customNotif").style.display = "none";
+    }
+});
+
+function saveTask() {
+    const mapel = document.getElementById("mapel").value;
+    const isi = document.getElementById("isi").value;
+    const deadline = document.getElementById("deadline").value;
+
+    let notifBefore = document.getElementById("notif").value;
+
+    if (notifBefore === "custom") {
+        notifBefore = document.getElementById("customNotif").value;
+    }
+
+    // cek input
+    if (!mapel || !isi || !deadline) {
+        alert("Harap isi semua data.");
+        return;
+    }
+
+    const deadlineTime = new Date(deadline).getTime();
+    const notifTime = deadlineTime - notifBefore * 60000;
+
+    const now = new Date().getTime();
+    const delay = notifTime - now;
+
+    if (delay > 0 && notifBefore !== "none") {
+        setTimeout(() => {
+            alert(`⏰ Pengingat Tugas!\n${mapel} - deadline sudah dekat!`);
+        }, delay);
+    }
+
+    alert("Tugas berhasil ditambahkan!");
+}
+</script>
+
+</body>
+</html>

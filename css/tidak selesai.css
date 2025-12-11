@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css?family=Krona+One&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Krona One", sans-serif;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  background: #25344b;
+  display: flex;
+  justify-content: center;
+}
+
+.app {
+  width: 390px;
+  height: 100vh;
+  background: #25344b;
+  position: relative;
+}
+
+/* HEADER */
+.header-img-wrapper {
+  width: 100%;
+  padding: 22px;
+  padding-bottom: 8px;
+}
+
+.header-img {
+  width: 100%;
+  border-radius: 18px;
+  box-shadow: 10px 10px 0px #000;
+}
+
+/* PANEL */
+.panel {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 67%;
+  background: #2d3d57;
+  border-radius: 75px 75px 0 0;
+  padding: 32px 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 26px;
+}
+
+/* SEARCH BAR */
+.search-bar {
+  width: 100%;
+  background: #f5c556;
+  border-radius: 40px;
+  padding: 10px 18px;
+  display: flex;
+  align-items: center;
+}
+
+.search-input {
+  width: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 12px;
+  color: #111;
+}
+
+.search-input::placeholder {
+  color: #111;
+}
+
+.search-icon {
+  margin-left: 6px;
+}
+
+/* TABS */
+.tab-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 6px;
+}
+
+.tab-active,
+.tab-outline {
+  width: 48%;
+  padding: 12px 0;
+  font-size: 11px;
+  border-radius: 8px;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+}
+
+/* aktif */
+.tab-active {
+  background: #ffffff;
+  color: #1e2a42;
+  border: none;
+}
+
+/* outline */
+.tab-outline {
+  background: transparent;
+  color: #fff;
+  border: 1.5px solid white;
+}

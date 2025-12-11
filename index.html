@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="RemindMe - Your personal reminder application" />
+    <title>RemindMe - Splash Screen</title>
+  </head>
+  <body>
+    <main class="splash-art" role="main">
+      <div class="rectangle" aria-hidden="true"></div>
+      <img class="ellipse" src="gambar/Ellipse 1.png" alt="" role="presentation" />
+      <img class="logo-remind-me" src="gambar/logo.png" alt="RemindMe logo with lightbulb icon" />
+    </main>
+
+    <style>
+  .splash-art {
+  background-color: #ffffff;
+  width: 100%;
+  min-width: 390px;
+  min-height: 844px;
+  position: relative;
+}
+
+.splash-art .rectangle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 390px;
+  height: 726px;
+  background-color: #2b3c57;
+}
+
+.splash-art .ellipse {
+  position: absolute;
+  top: 524px;
+  left: 0;
+  width: 390px;
+  height: 320px;
+}
+
+.splash-art .logo-remind-me {
+  position: absolute;
+  top: 23px;
+  left: 0;
+  width: 390px;
+  height: 456px;
+  aspect-ratio: 1;
+  object-fit: cover;
+}
+/* Original CSS code should be injected here from globals.css */
+
+.splash-art {
+  background-color: #ffffff;
+  width: 100%;
+  min-width: 390px;
+  min-height: 844px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.splash-art .rectangle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  max-width: 390px;
+  height: 726px;
+  background-color: #2b3c57;
+}
+
+.splash-art .ellipse {
+  position: absolute;
+  top: 524px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 390px;
+  height: 320px;
+  object-fit: cover;
+}
+
+.splash-art .logo-remind-me {
+  position: absolute;
+  top: 23px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 390px;
+  height: 456px;
+  aspect-ratio: 1;
+  object-fit: cover;
+}
+
+    </style>
+  </body>
+</html>

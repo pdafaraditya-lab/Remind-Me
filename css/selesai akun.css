@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css?family=Krona+One&display=swap');
+
+:root {
+  --main-blue: #2b3c57;
+  --main-yellow: #f7c95f;
+  --main-white: #ffffff;
+  --main-black: #000000;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100vh;
+  box-sizing: border-box;
+  font-family: 'Krona One', Arial, Helvetica, sans-serif;
+  background: var(--main-blue);
+  overflow-x: hidden;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+.congratulations {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--main-blue);
+  justify-content: flex-start;
+  box-sizing: border-box;
+}
+
+.congratulations__header {
+  width: 100%;
+  margin-top: 36px;
+  margin-bottom: 12px;
+  display: flex;
+  justify-content: center;
+}
+
+.logo-remind-me {
+  width: 220px;
+  max-width: 90vw;
+  height: auto;
+  margin-bottom: 20px;
+  display: block;
+}
+
+.congratulations__content {
+  width: 100%;
+  max-width: 390px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 12px;
+  padding: 0 18px;
+}
+
+.group {
+  width: 156px;
+  max-width: 92vw;
+  height: auto;
+  margin-bottom: 22px;
+  display: block;
+}
+
+.text-title {
+  font-size: 22px;
+  color: var(--main-white);
+  font-weight: 400;
+  margin-bottom: 12px;
+  text-align: center;
+  letter-spacing: 0.5px;
+}
+
+.text-desc {
+  font-size: 13px;
+  color: var(--main-white);
+  font-weight: 400;
+  text-align: center;
+  margin-bottom: 32px;
+  max-width: 290px;
+  padding: 0 6px;
+}
+
+.btn-mulai {
+  width: 100%;
+  max-width: 297px;
+  height: 36px;
+  background: var(--main-yellow);
+  border: none;
+  border-radius: 6px;
+  text-align: center;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 500;
+  color: #181818;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.2s, transform 0.1s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0;
+  box-sizing: border-box;
+  letter-spacing: 0.1px;
+}
+
+.btn-mulai:hover {
+  background: #f5c04d;
+  transform: translateY(-2px);
+}
+.btn-mulai:active {
+  transform: translateY(0);
+}
+.btn-mulai:focus {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 430px) {
+  .logo-remind-me { width: 140px; }
+  .group { width: 106px; }
+  .text-title { font-size: 18px; }
+  .text-desc { font-size: 12px; max-width: 94vw; margin-bottom: 25px; }
+  .btn-mulai { max-width: 95vw; font-size: 13px; }
+  .congratulations__content { padding: 0 6px; }
+}

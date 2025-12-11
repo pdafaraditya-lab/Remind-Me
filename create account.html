@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8" />
+    <title>Membuat Akun Baru - RemindMe</title>
+    <link rel="stylesheet" href="css/create account.css" />
+    <style>
+      .password-wrapper {
+        position: relative;
+        width: 100%;
+      }
+      .password-wrapper input {
+        width: 100%;
+        padding-right: 2.5em;
+        box-sizing: border-box;
+      }
+      .eye-btn {
+        background: none;
+        border: none;
+        position: absolute;
+        right: 0.5em;
+        top: 50%;
+        transform: translateY(-50%);
+        cursor: pointer;
+        padding: 0;
+        height: 2em;
+        display: flex;
+        align-items: center;
+      }
+      .eye-svg {
+        width: 1.5em;
+        height: 1.5em;
+        fill: #333;
+      }
+      .form-group {
+        margin-bottom: 16px;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="create-new-account">
+      <div class="header">
+        <img class="logo-remind-me" src="gambar/logo.png" alt="RemindMe Logo" />
+        <h1 class="form-title">Membuat Akun Baru</h1>
+      </div>
+      <form class="signup-form" onsubmit="return false;">
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input type="text" id="username" placeholder="Username" required autocomplete="username" />
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <div class="password-wrapper">
+            <input type="password" id="password" placeholder="Password" required autocomplete="new-password" />
+            <button type="button" id="togglePassword" class="eye-btn" aria-label="Show/Hide Password">
+              <!-- SVG Mata Terbuka (liat) -->
+              <svg id="eyeOpen" class="eye-svg" viewBox="0 0 64 40"><ellipse cx="32" cy="20" rx="30" ry="18"/><circle cx="32" cy="20" r="9" fill="white"/></svg>
+              <!-- SVG Mata Tertutup (hidden) -->
+              <svg id="eyeClosed" class="eye-svg" viewBox="0 0 64 40" style="display:none;">
+                <ellipse cx="32" cy="20" rx="30" ry="18"/>
+                <circle cx="32" cy="20" r="9" fill="white"/>
+                <line x1="10" y1="6" x2="54" y2="34" stroke="white" stroke-width="4"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" placeholder="Email" required autocomplete="email" />
+        </div>
+        <button type="button" id="signinBtn" class="btn-signin">Sign In</button>
+      </form>
+      <a href="forgot password.html" class="forgot-password">Lupa Kata Sandi Anda?</a>
+    </main>
+    <script>
+      // Toggle password visibility (SVG icon dalam input)
+      const eyeOpen = document.getElementById('eyeOpen');
+      const eyeClosed = document.getElementById('eyeClosed');
+      document.getElementById('togglePassword').addEventListener('click', function(e) {
+        e.preventDefault();
+        const passwordField = document.getElementById('password');
+        if (passwordField.type === 'password') {
+          passwordField.type = 'text';
+          eyeOpen.style.display = 'none';
+          eyeClosed.style.display = '';
+        } else {
+          passwordField.type = 'password';
+          eyeOpen.style.display = '';
+          eyeClosed.style.display = 'none';
+        }
+      });
+
+      // Validasi form sebelum pindah halaman
+      document.getElementById('signinBtn').addEventListener('click', function() {
+        const username = document.getElementById('username').value.trim();
+        const password = document.getElementById('password').value.trim();
+        const email = document.getElementById('email').value.trim();
+
+        if (username.length < 8 || username.length > 20) {
+          alert('Username harus terdiri dari 8 - 20 karakter!');
+          document.getElementById('username').focus();
+          return;
+        }
+
+        const passwordRegex = /^(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$/;
+        if (!passwordRegex.test(password)) {
+          alert('Password minimal 8 karakter, ada huruf besar & simbol!');
+          document.getElementById('password').focus();
+          return;
+        }
+
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+          alert('Format email tidak valid!');
+          document.getElementById('email').focus();
+          return;
+        }
+
+        window.location.href = 'sign in.html';
+      });
+    </script>
+  </body>
+</html>

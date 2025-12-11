@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8" />
+    <meta name="description" content="Verifikasi Email - Masukkan kode 4 digit yang dikirimkan ke email Anda" />
+    <title>Verifikasi Email - RemindMe</title>
+    <link rel="stylesheet" href="css/verifikasi email.css" />
+  </head>
+  <body>
+    <main class="verifikasi-email">
+      <header class="header">
+        <img class="logo-remind-me" src="gambar/logo.png" alt="RemindMe Logo" />
+      </header>
+      <section class="verification-content">
+        <h1 class="verification-title">Verifikasi Email</h1>
+        <p class="verification-desc">Silakan Masukkan Kode 4 Digit yang Dikirimkan Ke Email Anda</p>
+        <form class="verification-form" method="post" action="#" aria-label="Form Verifikasi Email">
+          <div class="code-inputs" role="group" aria-label="Kode Verifikasi 4 Digit">
+            <div class="code-digit-input">
+              <input type="text" id="code-1" maxlength="1" pattern="[0-9]" inputmode="numeric" required autocomplete="off" />
+              <div class="digit-rectangle"></div>
+            </div>
+            <div class="code-digit-input">
+              <input type="text" id="code-2" maxlength="1" pattern="[0-9]" inputmode="numeric" required autocomplete="off" />
+              <div class="digit-rectangle"></div>
+            </div>
+            <div class="code-digit-input">
+              <input type="text" id="code-3" maxlength="1" pattern="[0-9]" inputmode="numeric" required autocomplete="off" />
+              <div class="digit-rectangle"></div>
+            </div>
+            <div class="code-digit-input">
+              <input type="text" id="code-4" maxlength="1" pattern="[0-9]" inputmode="numeric" required autocomplete="off" />
+              <div class="digit-rectangle"></div>
+            </div>
+          </div>
+          <button type="submit" class="btn-verify">Verifikasi</button>
+        </form>
+        <button type="button" class="btn-resend">Kirim Ulang Kode</button>
+      </section>
+    </main>
+  </body>
+</html>

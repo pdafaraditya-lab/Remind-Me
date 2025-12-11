@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8" />
+    <title>Selamat - RemindMe</title>
+    <meta name="description" content="Akun Anda sudah selesai, nikmati pengalaman terbaik dari kami." />
+    <link rel="stylesheet" href="css/selesai akun.css" />
+  </head>
+  <body>
+    <main class="congratulations">
+      <header class="congratulations__header">
+        <img class="logo-remind-me" src="gambar/logo.png" alt="RemindMe Logo" />
+      </header>
+      <section class="congratulations__content">
+        <img class="group" src="gambar/kalender.png" alt="Ilustrasi kartu identitas" role="img" />
+        <h1 class="text-title">Selamat!</h1>
+        <p class="text-desc">Akun Anda sudah selesai, nikmati pengalaman terbaik dari kami!</p>
+        <a href="dashboard.html"
+           class="btn-mulai"
+           role="button"
+           aria-label="Mulai menggunakan aplikasi"
+           id="btnMulai">
+          Mulai
+        </a>
+      </section>
+    </main>
+
+    <script>
+      btn.addEventListener('click', function (e) {
+        try {
+          sessionStorage.setItem('startedFromWelcome', '1');
+        } catch (err) { }
+      });
+    </script>
+  </body>
+</html>
